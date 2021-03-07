@@ -8,6 +8,15 @@ import com.tjoeun.viewpager_20210307.fragments.DescFragment
 import com.tjoeun.viewpager_20210307.fragments.NickFragment
 
 class MainViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when(position){
+            0 -> "닉네임"
+            1 -> "생년월일"
+            else -> "소개문구"
+        }
+    }
+    
     override fun getCount(): Int {
         return 3
     }

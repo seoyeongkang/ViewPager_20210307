@@ -13,14 +13,10 @@ class MainViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     }
 
     override fun getItem(position: Int): Fragment {
-        if(position == 0) {
-            return NickFragment()
-        }
-        else if(position == 1){
-            return BirthFragment()
-        }
-        else {
-            return DescFragment()
+        return when(position) {
+            0 -> NickFragment()
+            1 -> BirthFragment()
+            else -> DescFragment()
         }
     }
 
